@@ -1,0 +1,66 @@
+{
+  "name": "parcel-vue-starter",
+  "version": "0.0.1",
+  "description": "Vuejs starter with parcel bundler",
+  "author": "Alberto Palumbo <palumbo.alb@gmail.com>",
+  "scripts": {
+    "start": "better-npm-run start",
+    "build": "better-npm-run build",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "betterScripts": {
+    "start": {
+      "command": "parcel ./src/index.html",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "build": {
+      "command": "rimraf dist && rimraf .cache && parcel build ./src/index.html",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.24",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.7.0",
+    "better-npm-run": "^0.1.1",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-vue": "^5.0.0-beta.3",
+    "jest": "^21.2.0",
+    "jest-serializer-vue": "^2.0.2",
+    "parcel-bundler": "^1.9.7",
+    "parcel-plugin-eslint": "^1.0.4",
+    "parcel-plugin-vue": "^1.5.0",
+    "prettier": "^1.14.2",
+    "regenerator-runtime": "^0.12.1",
+    "rimraf": "^2.6.2",
+    "vue-jest": "^2.6.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ]
+  }
+}
